@@ -13,6 +13,10 @@ public class HomeScreenController {
     @FXML
     private Button launchButton;
 
+
+    /**
+     * Appelle la prochaine scène (QuiOverviewController)
+     */
     @FXML
     public void handleLaunchButton() throws IOException {
         Scene newScene = App.scene = new Scene(App.loadFXML("view/QuizOverview"));

@@ -36,11 +36,17 @@ public class QuizOverviewController {
 
     private int score;
 
+    /**
+     * Affiche la question en cours
+     */
     private void showCurrentQuestion(){
         String currentQuestion = questions.get(currentQuestionIndex).getQuestion();
         questionText.setText(currentQuestion);
     }
 
+    /**
+     * Va à la prochaine question
+     */
     private void gotoNextQuestion(){
         if (currentQuestionIndex>=questions.size()-1){
             gameOver();
@@ -53,14 +59,24 @@ public class QuizOverviewController {
 
     }
 
+    /**
+     * Met à jour le texte du score
+     */
     private void printScore(){
         scoreText.setText("Votre score est de : " + score + "/" + questions.size());
     }
 
+    /**
+     * Met à jour le texte de l'indexe de la question
+     */
     private void printQuestionIndex(){
         questionIndexText.setText("Question #" + currentQuestionIndex +"/"+questions.size());
     }
 
+    /**
+     * @param answerIndex indexe sur la reponse
+     * détermine s'il faut incrémenter ou non le score en fonction de answerIndex et passe la question en mettant à jour les différents textes
+     */
     private void handleAnswer(int answerIndex){
         if (questions.get(currentQuestionIndex).getAnswers().get(answerIndex).isGoodAnswer()){
             incrementScore();
@@ -74,17 +90,26 @@ public class QuizOverviewController {
         answerButton3.setText(questions.get(currentQuestionIndex).getAnswers().get(2).getText());
     }
 
+    /**
+     * Action du bouton 1
+     */
     @FXML
     private void handleAnswerButton1(){
         handleAnswer(0);
     }
 
+    /**
+     * Action du bouton 2
+     */
     @FXML
     private void handleAnswerButton2(){
         handleAnswer(1);
 
     }
 
+    /**
+     * Action du bouton 3
+     */
     @FXML
     private void handleAnswerButton3(){
         handleAnswer(2);
@@ -92,10 +117,16 @@ public class QuizOverviewController {
     }
 
 
+    /**
+     * Incrémente le score
+     */
     private void incrementScore(){
         score++;
     }
 
+    /**
+     * Met fin à la partie
+     */
     private void gameOver() {
         questionText.setText("");
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
