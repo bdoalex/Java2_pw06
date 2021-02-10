@@ -1,6 +1,6 @@
 package isen.quiz.controller;
 
-import isen.quiz.App;
+import isen.quiz.QuizApp;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -19,7 +19,7 @@ public class HomeScreenController {
      */
     @FXML
     public void handleLaunchButton() throws IOException {
-        Scene newScene = App.scene = new Scene(App.loadFXML("view/QuizOverview"));
+        Scene newScene = QuizApp.scene = new Scene(QuizApp.loadFXML("view/QuizOverview"));
         Stage stage = (Stage) launchButton.getScene().getWindow();
         stage.setScene(newScene);
 

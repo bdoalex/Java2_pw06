@@ -70,7 +70,7 @@ public class QuizOverviewController {
      * Met à jour le texte de l'indexe de la question
      */
     private void printQuestionIndex(){
-        questionIndexText.setText("Question #" + currentQuestionIndex +"/"+questions.size());
+        questionIndexText.setText("Question #" + (currentQuestionIndex+1) +"/"+questions.size());
     }
 
     /**
@@ -138,7 +138,7 @@ public class QuizOverviewController {
 
     @FXML
     public void initialize (){
-        currentQuestionIndex = 1;
+        currentQuestionIndex = 0;
         score = 0;
         questions = QuestionService.getInstance().getQuestions();
         showCurrentQuestion();
