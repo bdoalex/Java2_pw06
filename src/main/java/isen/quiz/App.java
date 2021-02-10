@@ -20,11 +20,8 @@ public class App extends Application {
         scene = new Scene(loadFXML("view/HomeScreen"));
         stage.setScene(scene);
         stage.setTitle("Pw06 BARBOSA Alexandre");
+        stage.setResizable(false);
         stage.show();
-    }
-
-    public static void setRoot(String fxml) throws IOException {
-        scene.setRoot(loadFXML(fxml));
     }
 
     public static Parent loadFXML(String fxml) throws IOException {

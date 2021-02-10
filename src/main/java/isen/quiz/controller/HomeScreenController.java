@@ -15,7 +15,7 @@ public class HomeScreenController {
 
 
     /**
-     * Appelle la prochaine scène (QuiOverviewController)
+     * Appelle la prochaine scène (QuiOverviewController) à l'appui du bouton lancer
      */
     @FXML
     public void handleLaunchButton() throws IOException {

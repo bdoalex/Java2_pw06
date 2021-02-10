@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Question {
 
-	private String question;
+	private final String question;
 
-	private List<Answer> answers;
+	private final List<Answer> answers;
 
 	public Question(String question, Answer answer1, Answer answer2, Answer answer3) {
 		super();

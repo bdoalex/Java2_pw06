@@ -8,7 +8,7 @@ import isen.quiz.model.Question;
 
 public class QuestionService {
 
-	private List<Question> questions;
+	private final List<Question> questions;
 
 	private QuestionService() {
 		questions = new ArrayList<>();
