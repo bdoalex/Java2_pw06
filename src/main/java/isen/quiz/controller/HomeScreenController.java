@@ -19,9 +19,7 @@ public class HomeScreenController {
      */
     @FXML
     public void handleLaunchButton() throws IOException {
-        Scene newScene = QuizApp.scene = new Scene(QuizApp.loadFXML("view/QuizOverview"));
-        Stage stage = (Stage) launchButton.getScene().getWindow();
-        stage.setScene(newScene);
+        QuizApp.setRoot("/isen/quiz/view/QuizOverview");
 
 
 

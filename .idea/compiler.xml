@@ -9,5 +9,8 @@
         <module name="pw06" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="pw06" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

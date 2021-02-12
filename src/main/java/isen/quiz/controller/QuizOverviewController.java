@@ -41,7 +41,7 @@ public class QuizOverviewController {
      */
     private void showCurrentQuestion(){
         String currentQuestion = questions.get(currentQuestionIndex).getQuestion();
-        questionText.setText(currentQuestion);
+        this.questionText.setText(currentQuestion);
     }
 
     /**
@@ -49,12 +49,12 @@ public class QuizOverviewController {
      */
     private void gotoNextQuestion(){
         if (currentQuestionIndex>=questions.size()-1){
-            gameOver();
+            this.gameOver();
         }
 
         else{
             currentQuestionIndex++;
-            showCurrentQuestion();
+            this.showCurrentQuestion();
         }
 
     }
@@ -63,14 +63,14 @@ public class QuizOverviewController {
      * Met à jour le texte du score
      */
     private void printScore(){
-        scoreText.setText("Votre score est de : " + score + "/" + questions.size());
+        this.scoreText.setText("Votre score est de : " + score + "/" + this.questions.size());
     }
 
     /**
      * Met à jour le texte de l'indexe de la question
      */
     private void printQuestionIndex(){
-        questionIndexText.setText("Question #" + (currentQuestionIndex+1) +"/"+questions.size());
+        this.questionIndexText.setText("Question #" + (currentQuestionIndex+1) +"/"+questions.size());
     }
 
     /**
@@ -79,12 +79,12 @@ public class QuizOverviewController {
      */
     private void handleAnswer(int answerIndex){
         if (questions.get(currentQuestionIndex).getAnswers().get(answerIndex).isGoodAnswer()){
-            incrementScore();
+            this.incrementScore();
 
         }
-        printScore();
-        gotoNextQuestion();
-        printQuestionIndex();
+        this.printScore();
+        this.gotoNextQuestion();
+        this. printQuestionIndex();
         answerButton1.setText(questions.get(currentQuestionIndex).getAnswers().get(0).getText());
         answerButton2.setText(questions.get(currentQuestionIndex).getAnswers().get(1).getText());
         answerButton3.setText(questions.get(currentQuestionIndex).getAnswers().get(2).getText());
@@ -121,7 +121,8 @@ public class QuizOverviewController {
      * Incrémente le score
      */
     private void incrementScore(){
-        score++;
+        this.score++;
+        this.printScore();
     }
 
     /**
@@ -138,12 +139,12 @@ public class QuizOverviewController {
 
     @FXML
     public void initialize (){
-        currentQuestionIndex = 0;
-        score = 0;
+        this.currentQuestionIndex = 0;
+        this.score = 0;
         questions = QuestionService.getInstance().getQuestions();
-        showCurrentQuestion();
-        printScore();
-        printQuestionIndex();
+        this.showCurrentQuestion();
+        this.printScore();
+        this.printQuestionIndex();
 
         answerButton1.setText(questions.get(currentQuestionIndex).getAnswers().get(0).getText());
         answerButton2.setText(questions.get(currentQuestionIndex).getAnswers().get(1).getText());
